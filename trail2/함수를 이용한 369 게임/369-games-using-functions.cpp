@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-bool contains369(int n) {
+bool Contains369(int n) {
     while (n > 0) {
         int digit = n % 10;
 
@@ -14,11 +14,11 @@ bool contains369(int n) {
     return false;
 }
 
-bool IsMagicNumber(int n) {
+bool Is369Number(int n) {
     if (n % 3 == 0)
         return true;
 
-    if (contains369(n))
+    if (Contains369(n))
         return true;
 
     return false;
@@ -31,7 +31,7 @@ int main() {
     int cnt = 0;
 
     for (int i = a; i <= b; i++) {
-        if (IsMagicNumber(i))
+        if (Is369Number(i))
             cnt++;
     }
 
