@@ -15,7 +15,6 @@ int GetSquareSum(int N) {
 }
 
 int main() {
-    int N;
     cin >> N;
 
     cout << GetSquareSum(N);
