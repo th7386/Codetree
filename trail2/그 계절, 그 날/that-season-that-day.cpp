@@ -17,19 +17,15 @@ bool IsLeapYear(int Y) {
 }
 
 bool IsValidDate(int Y, int M, int D) {
-    int days[13] = {
-        0,
-            31, 28, 31, 30, 31, 30,
-            31, 31, 30, 31, 30, 31
-    };
+    int days[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    if (M < 1 || M > 12)
+    if (M > 12)
         return false;
 
     if (IsLeapYear(Y))
         days[2] = 29;
 
-    if (D < 1 || D > days[M])
+    if (D > days[M])
         return false;
 
     return true;
