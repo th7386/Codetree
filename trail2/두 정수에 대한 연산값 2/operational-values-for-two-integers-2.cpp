@@ -6,12 +6,12 @@ int a, b;
 
 void ChangeNumber(int& a, int& b) {
     if (a < b) {
-        a = a + 10;
-        b = b * 2;
+        a += 10;
+        b *= 2;
     }
     else {
-        a = a * 2;
-        b = b + 10;
+        a *= 2;
+        b += 10;
     }
 }
 
