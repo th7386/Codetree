@@ -1,41 +1,37 @@
 #include <iostream>
+#include <numeric>
 
 using namespace std;
 
 int n;
 int arr[10];
 
-int GetGcd(int a, int b)
-{
+int GCD(int a, int b) {
     if (b == 0)
         return a;
 
-    return GetGcd(b, a % b);
+    return GCD(b, a % b);
 }
 
-int GetLcm(int a, int b)
-{
-    return a / GetGcd(a, b) * b;
+int LCM(int a, int b) {
+    return a * b / GCD(a, b);
 }
 
-int GetAllLcm(int arr[], int n)
-{
+int GetLCMAll(int arr[], int n) {
     if (n == 1)
         return arr[0];
 
-    return GetLcm(GetAllLcm(arr, n - 1), arr[n - 1]);
+    return LCM(GetLCMAll(arr, n - 1), arr[n - 1]);
 }
 
-int main()
-{
+int main() {
     cin >> n;
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
-    cout << GetAllLcm(arr, n);
+    cout << GetLCMAll(arr, n);
 
     return 0;
 }
