@@ -43,7 +43,8 @@ int main() {
         people[i] = Person(name[i], height[i], weight[i]);
     }
 
-    cout << fixed << setprecision(1);
+    cout << fixed;
+    cout.precision(1);
 
     sort(people, people + 5, CmpName);
 
