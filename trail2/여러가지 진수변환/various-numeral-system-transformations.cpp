@@ -9,26 +9,12 @@ int main() {
     int digits[10];
     int cnt = 0;
 
-    if (B == 4) {
-        for (;;) {
-            if (N < 4) {
-                digits[cnt++] = N;
-                break;
-            }
-            digits[cnt++] = N % 4;
-            N /= 4;
-        }
+    while (N >= B) {
+        digits[cnt++] = N % B;
+        N /= B;
     }
-    else if (B == 8) {
-        for (;;) {
-            if (N < 8) {
-                digits[cnt++] = N;
-                break;
-            }
-            digits[cnt++] = N % 8;
-            N /= 8;
-        }
-    }
+
+    digits[cnt++] = N;
 
     for (int i = cnt - 1; i >= 0; i--) {
         cout << digits[i];
